@@ -10,19 +10,19 @@ public class WgetDemoTest{
 	WgetDemo w = new WgetDemo(); 
 	//存在文件
 	@Test
-	public void fileexist() {
-		w.downfile("http://www.gjt.org/download/time/java/tar/javatar-2.5.tar.gz");
+	public void docDownload() throws Exception{
+		w.downfile("http://pic.qiantucdn.com/58pic/11/79/85/13t58PICsap.jpg");
 	}
 	
 	//不存在的情况
 	@Test
-	public void filenotexist(){
+	public void filenotexist() throws Exception{
 		w.downfile("http://www.bb.com");
 	}
 	//输入地址有误
 	@Test
-	public void urlerror(){
-		w.downfile("ftp:ftp");
+	public void urlerror() throws Exception{
+		w.downfile("ftp://ftp.succez.com");
 	}
 
 }
