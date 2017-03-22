@@ -77,9 +77,12 @@ public class WgetDemo {
 		OutputStream out = new FileOutputStream(new File(filepath));
 		savefile(in, out);
 		//关闭流
-		in.close();
-		out.close();
-		
+		if(in != null){
+			in.close();
+		}
+		if(out != null){
+			out.close();
+		}
 		log.info("文件下载完成");
 		//释放链接
 		httpResponse.close();
